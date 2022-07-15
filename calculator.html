@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <title>
+            calculator
+        </title>
+        <style>
+            #div{
+                width:400px;
+                height:550px;
+                background-color:darksalmon;
+                border-radius: 5px;
+            }
+            #h1
+            {
+                text-align: left;
+                padding-left: 40px;
+                padding-top:20px;
+            }
+            #diva
+            {
+                width:250px;
+                height:420px;
+                background-color:blue;
+                border:5px solid red;
+                padding-top: 20px;
+                margin-left:80px;
+                
+            }
+            #tt
+            {
+                width:225px;
+                height:60px;
+                font-size:x-large;
+            }
+            button{
+                width:55px;
+                height:70px;
+                border:4px solid blue;
+            }
+            #r
+            {
+                border:4px solid blue;
+                width:80px;
+                height:50px;
+                font-weight: bold;
+                margin-right:150px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="div">
+            <h1 style="color:blue;" id="h1">Calculator</h1>
+            <div id="diva">
+                <input type="text" id="tt" placeholder="0"><br>
+                <button  value="1" style="background-color:aquamarine" id="b1" onclick="f1();"><b>1</b></button>
+                <button value="2" style="background-color:aquamarine" id="b2" onclick="f2();"><b>2</b></button>
+                <button value="3" style="background-color:aquamarine" id="b3" onclick="f3();"><b>3</b></button>
+                <button value="+" style="background-color:aquamarine" id="b4" onclick="f4();"><b>+</b></button><br>
+                <button value="4" style="background-color:aquamarine" id="b5" onclick="f5();"><b>4</b></button>
+                <button value="5" style="background-color:aquamarine" id="b6" onclick="f6();"><b>5</b></button>
+                <button value="6" style="background-color:aquamarine" id="b7" onclick="f7();"><b>6</b></button>
+                <button value="-" style="background-color:aquamarine" id="b8" onclick="f8();"><b>-</b></button><br>
+                <button value="7" style="background-color:aquamarine" id="b9" onclick="f9();"><b>7</b></button>
+                <button value="8" style="background-color:aquamarine" id="b10" onclick="f10();"><b>8</b></button>
+                <button value="9" style="background-color:aquamarine" id="b11" onclick="f11();"><b>9</b></button>
+                <button value="*" style="background-color:aquamarine" id="b12" onclick="f12();"><b>*</b></button><br>
+                <button value="." style="background-color:aquamarine" id="b13" onclick="f13();"><b>.</b></button>
+                <button value="0" style="background-color:aquamarine" id="b14" onclick="f14();"><b>0</b></button>
+                <button value="=" style="background-color:aquamarine" onclick="easy();"><b>=</b></button>
+                <button value="/" style="background-color:aquamarine" id="b15" onclick="f15();"><b>/</b></button><br>
+                <button style="background-color:aquamarine" value="clear" id="r" onclick="res();">clear</button>
+            </div>
+        </div>
+    </center>
+    </body>
+   <script>
+    var v="";
+    function cal()
+    {
+        document.getElementById("tt").value=v;
+    }
+    function f1()
+    {
+        var inp=document.getElementById("b1").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f2()
+    {
+        var inp=document.getElementById("b2").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f3()
+    {
+        var inp=document.getElementById("b3").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f4()
+    {
+        var inp=document.getElementById("b4").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f5()
+    {
+        var inp=document.getElementById("b5").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f6()
+    {
+        var inp=document.getElementById("b6").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f7()
+    {
+        var inp=document.getElementById("b7").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f8()
+    {
+        var inp=document.getElementById("b8").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f9()
+    {
+        var inp=document.getElementById("b9").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f10()
+    {
+        var inp=document.getElementById("b10").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f11()
+    {
+        var inp=document.getElementById("b11").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f12()
+    {
+        var inp=document.getElementById("b12").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f13()
+    {
+        var inp=document.getElementById("b13").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f14()
+    {
+        var inp=document.getElementById("b14").value;
+        v=v+inp;
+        cal(v);
+    }
+    function f15()
+    {
+        var inp=document.getElementById("b15").value;
+        v=v+inp;
+        cal(v);
+    }
+    function res()
+    {
+        document.getElementById("tt").value="";
+        v="";
+    }
+    function easy()
+    {
+        var regex=/[0-9+-/*%]+[+-/*%][0-9+-/*%]+/g;
+        var l=document.getElementById("tt").value
+        if(l.match(regex))
+        {
+            document.getElementById("tt").value=eval(v);
+            v=eval(v);
+        }
+        else{
+            document.getElementById("tt").value="Invalid";
+            document.getElementById("tt").style.color="red";
+        }
+    }
+   </script>
+</html>
