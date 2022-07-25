@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Form1</title>
+        <style>
+            #full_name{
+                border:2px solid rgb(73, 68, 68);
+                width:200px;
+            }
+            #PN
+            {
+                border:2px solid rgb(80, 76, 76);
+                width:200px;
+            }
+            @media only all and (max-width:1300px)
+            {
+                #divi{
+                    width:100%;
+                    height:100%;
+                }
+            }
+        </style>
+    </head>
+    <body id="body" bgcolor="orange">
+        <center>
+            <div id="divi" style="width:850px;border:1px solid black;background-color: yellow;border-radius:4px;">
+        <form name="form" action="/vamsi.php" method="post" onsubmit="return All();">
+            <h1 style="color:purple;"><u>REGISTERATION FORM</u></h1>
+            <table>
+                <tr><th>First Name:</th><th><input type="text" id="fname" onkeyup="first();"></th>
+                <th>Last Name:</th><th><input type="text" id="lname" onkeyup="last();"></th>
+                <th>Middle Name:</th><th><input type="text" id="mname" placeholder="(optional)" onkeyup="middle();"></th></tr>
+                <tr><th></th><th>$<label id="f"></label></th>
+                    <th></th><th>$<label id="l"></label></th></th>
+                    <th></th><th>$<label id="m"></label></th>
+                </tr>
+                <tr><th></th><th></th><th></th></tr>
+                <tr>
+                    <th>Full Name:</th><th><input type="text" name="" id="full_name" onclick="full();"></th>
+                    <th><label id="p"></label></th>
+                </tr>
+                <tr>
+                    <th>Country:</th><th><select name="country list" id="list">
+                        <option value="select">select</option>
+                        <option value="INDIA">INDIA</option>
+                        <option value="USA">USA</option>
+                    </select></th>
+                </tr>
+                <tr>
+                    <th>Ph No.:</th>
+                    <th><input type="number" id="PN" minlength="10" onclick="ph();"></th>
+                </tr>
+                <tr><th></th><th></th><th><input type="reset" value="Reset"></th><th><input type="submit" value="Register"></th></tr>
+            </table>
+        </form>
+       
+    </div>
+    </center>
+    </body>
+    <script type="text/javascript">
+        function first()
+        {
+            var f=document.getElementById("fname").value;
+            var regEX=/^[A-Za-z]+$/;
+            if(f.length>3 && f.match(regEX))
+            {
+                document.getElementById("f").innerHTML="";
+                return true;
+            }
+            else{
+                document.getElementById("f").innerHTML="Invalid data!!!";
+                document.getElementById("f").style.color="red";
+                return false;
+            }
+        }
+        function last(){
+            var l=document.getElementById("lname").value;
+            var regEx=/^[A-Za-z]+$/;
+            if(l.length>3 && l.match(regEx))
+            {
+                document.getElementById("l").innerHTML="";
+                return true;
+            }
+            else{
+                document.getElementById("l").innerHTML="Invalid data!!!";
+                document.getElementById("l").style.color="red";
+                return false;
+            }
+        }
+        function middle()
+        {
+            var m=document.getElementById("mname").value;
+            var regEX=/^[A-Za-z]+$/;
+            if(m.length>3 && m.match(regEX)){
+                document.getElementById("m").innerHTML="";
+                return true;
+             }
+             else if(m.length==0){
+                document.getElementById("m").innerHTML="";
+             }
+             else{
+                document.getElementById("m").innerHTML="Invalid data!!!";
+                document.getElementById("m").style.color="red";
+                return false;
+             }
+        }
+        function full()
+        {
+            var f=document.getElementById("fname").value;
+            var l=document.getElementById("lname").value;
+            var m=document.getElementById("mname").value;
+            var s=f+" "+m+" "+l+" ";
+            var regEX=/^[A-Za-z]+$/;
+            if(f.match(regEX) && l.match(regEX) && (m.match(regEX) || m==""))
+            {
+                document.getElementById("full_name").value=s;
+                return true;
+            }
+            else
+            {
+                document.getElementById("p").innerHTML="Invalid data!!!";
+                document.getElementById("p").style.color="red";
+                return false;
+            }
+            
+        }
+        function All()
+        {
+            if(first() && last() && middle() && full()){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        function ph()
+        {
+            var p=document.getElementById("list").value;
+            if(p=="USA")
+            {
+                document.getElementById("PN").placeholder="xxx-xxx-xxxx";
+            }
+            else if(p=="INDIA")
+            {
+                document.getElementById("PN").value="+91";
+            }
+        }
+    </script>
+</html>

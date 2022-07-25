@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+    </head>
+    <body>
+        <center>
+            <div style="background-color:greenyellow; width:800px;">
+                <h1>forms</h1>
+            <form action="/.php" method="get">
+                <label for="n">firstname:</label><input type="text" name="n" placeholder="enter your name" required><br>
+                <label for="n">email:</label><input type="text" name="n"   placeholder="enter valid email" required><br>
+    
+                password:<input type="password" name="p" placeholder="enter your password"  maxlength="5" required><br>
+                sports:<fieldset>
+                        <legend align="center">sports</legend>
+                    <input type="checkbox" value="hockey" name="c">hockey
+                        <input type="checkbox" name="cc">cricket
+                        <input type="checkbox" name="ccc">badminton</fieldset><br>
+                <input type="radio" value="male" name="r">Male
+                <input type="radio" value="female" name="rr">female
+                <input type="radio" value="others" name="rrr">others<br>
+                Hidden:<input type="hidden" name="" value="vamsi"><br>
+                files:<input type="files" name="" multiple accept="image/png">
+                date:<input type="date" name="">
+                color:<input type="color" name="">
+                reset:<input type="reset" name="">
+                range:<input type="range" name="">
+                button:<input type="button" name="">
+                <textarea rows="5" cols="5"></textarea>
+                <select><!--drop down list
+                           -->
+                        <optgroup label="s.no">
+                        <option>1</option>
+                        <option>2</option>
+    
+                        <option>3</option>
+                    </optgroup>
+                        <optgroup>
+                        <option>cse</option>
+    
+                        <option>civil</option>
+    
+                        <option>mech</option>
+                    </optgroup>
+    
+    
+                </select>
+                submit:<input type="submit">
+    
+            </form>
+        </div>
+        </center>
+    
+    </body>
+</html>
